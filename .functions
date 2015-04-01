@@ -1,0 +1,135 @@
+##############
+# Filesystem #
+##############
+
+# Make dir then go there
+mkcd () {
+  if [[ ! -d $1 ]] ; then
+    mkdir -p $1 && cd $1
+  else
+    cd $1
+  fi
+}
+
+# Convert bytes to readable file sizes
+# http://www.linuxjournal.com/article/9293
+kmg () {
+  kilo="$( echo "scale=2; $1 / 1024" | bc )"
+  kiloint="$( echo "$1 / 1024" | bc )"
+
+  mega="$( echo "scale=2; $kilo / 1024" | bc )"
+  megaint="$( echo "$kilo / 1024" | bc )"
+
+  giga="$( echo "scale=2; $mega / 1024" | bc )"
+  gigaint="$( echo "$mega / 1024" | bc )"
+
+  if [ "$kiloint" -lt 1 ] ; then
+    echo "$1 bytes"
+  elif [ "$megaint" -lt 1 ] ; then
+    echo "${kilo}KB"
+  elif [ "$gigaint" -lt 1 ] ; then
+    echo "${mega}MB"
+  else
+    echo "${giga}GB"
+  fi
+}
+
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+function s() {
+  if [ $# -eq 0 ]; then
+    subl .;
+  else
+    subl "$@";
+  fi;
+}
+
+# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
+function targz() {
+  local tmpFile="${@%/}.tar";
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+
+  size=$(
+    stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+    stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+  );
+
+  local cmd="";
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+    # the .tar file is smaller than 50 MB and Zopfli is available; use it
+    cmd="zopfli";
+  else
+    if hash pigz 2> /dev/null; then
+      cmd="pigz";
+    else
+      cmd="gzip";
+    fi;
+  fi;
+
+  echo "Compressing .tar using \`${cmd}\`…";
+  "${cmd}" -v "${tmpFile}" || return 1;
+  [ -f "${tmpFile}" ] && rm "${tmpFile}";
+  echo "${tmpFile}.gz created successfully.";
+}
+
+##########
+# Images #
+##########
+
+# Image width
+width () {
+  echo "$( sips -g pixelWidth $1 | grep -oE "[[:digit:]]{1,}$" )"
+}
+
+# Image height
+height () {
+  echo "$( sips -g pixelHeight $1 | grep -oE "[[:digit:]]{1,}$" )"
+}
+
+# Dimensions
+dimensions() {
+  echo "$( width $1 )x$( height $1 )"
+}
+
+# Batch convert apple touch icons (requires imagemagick/graphicsmagick)
+convert-touch-icons() {
+  sizes="152 144 120 114 76 72"
+
+  for i in $sizes
+  do
+    convert apple-touch-icon-precomposed.png -resize ${i}x${i} apple-touch-icon-${i}x${i}-precomposed.png
+  done
+}
+
+#######
+# Web #
+#######
+
+# Use the git.io link shortener
+git.io() {
+  curl -i -s http://git.io -F "url=$1" | grep "Location" | cut -f 2 -d " "
+}
+
+# Create a data URL from a file
+function dataurl() {
+  local mimeType=$(file -b --mime-type "$1");
+  if [[ $mimeType == text/* ]]; then
+    mimeType="${mimeType};charset=utf-8";
+  fi
+  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+}
+
+# Size of remote resource
+# http://stackoverflow.com/a/4497786/174384
+# Todo:
+#   - follow redirections
+#   - print errors
+urlsize () {
+  bytes="$( curl -sI "$1" | awk '/Content-Length/ { print $2 }' | tr -d '\r' )"
+  echo "$( kmg ${bytes} )"
+}
+
+# Run `dig` and display the most useful info
+function digga() {
+  dig +nocmd "$1" any +multiline +noall +answer;
+}

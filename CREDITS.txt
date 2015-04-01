@@ -1,0 +1,7 @@
+Thanks to...
+
+@gf3 (Gianni Chiappetta) for his bootstrap shell script, and lots more dotfiles
+inspiration - https://github.com/gf3/dotfiles
+
+@mathiasbynens for OSX settings, Homebrew shell script, and wonderful dotfiles
+to reference - https://github.com/mathiasbynens/dotfiles

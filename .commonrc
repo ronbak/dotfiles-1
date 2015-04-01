@@ -1,0 +1,21 @@
+# Load things!
+for file in ~/.{exports,aliases,functions}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
+# GNU coreutils
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# nvm
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+nvm use 0.10
+export NODE_ENV="dev"
+
+# composer
+PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# rvm
+PATH="$HOME/.rvm/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+rvm use ruby-2.1.1
