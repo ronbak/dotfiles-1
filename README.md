@@ -2,12 +2,17 @@
 
 Note: This repo hasn't been tailored to be un-opinionated and customizable, so I apologize if it takes some effort to customize it to your exact needs and preferences. At the very least, I hope you can find some inspiration here towards the development of your own dotfiles and configuration layout.
 
+## Setup
+
+Run the `bootstrap.sh` script to back up your current dotfiles and move everything in this repo to your home directory. Any dotfiles that will be overwritten will be moved to a timestamped folder in `~/.dotfiles-backup`.
+
 ## Prerequisites
 
 - [Git](https://git-scm.com) (installed via package manager)
 - [tree](http://mama.indstate.edu/users/ice/tree) (installed via package manager)
-- [nvm](https://github.com/creationix/nvm), along with a stable version of Node.js (0.10.x)
-- [rvm](https://rvm.io), along with a stable version of Ruby (2.1.1)
+- [nvm](https://github.com/creationix/nvm), along with a stable version of Node.js (at time of writing, 0.10.x)
+- [rvm](https://rvm.io), along with a stable version of Ruby (at time of writing, 2.1.x)
+- [Composer](http://getcomposer.org) (optional)
 - (OSX only) [Sublime Text](https://www.sublimetext.com) as the primary editor, with the `subl` [command-line helper](https://google.com/#q=subl+command+line) configured
 
 ### zsh
@@ -25,10 +30,6 @@ Change the shell:
 `$ chsh -s \`which zsh\``
 
 When loading a new shell session, your `~/.zshrc` file will be loaded and will source the oh-my-zsh initialization script: initializing some things, loading plugins, and setting the Zsh theme.
-
-## Setup
-
-Run the `bootstrap.sh` script to back up your current dotfiles and move everything in this repo to your home directory. Any dotfiles that will be overwritten will be sent to a timestamped folder in `~/.dotfiles-backup`.
 
 ## OSX Apps and Settings
 
