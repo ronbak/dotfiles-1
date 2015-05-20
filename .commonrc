@@ -4,8 +4,12 @@ for file in ~/.{exports,aliases,functions}; do
 done;
 unset file;
 
-# GNU coreutils
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# GNU coreutils (OSX only)
+case $OSTYPE in
+darwin*)
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  ;;
+esac
 
 # nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"

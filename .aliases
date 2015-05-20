@@ -53,5 +53,9 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to cl
 # Homebrew #
 ############
 
-alias brews="brew list -1"
-alias bubu="brew update && brew upgrade && brew cleanup"
+case $OSTYPE in
+darwin*)
+  alias brews="brew list -1"
+  alias bubu="brew update && brew upgrade && brew cleanup"
+  ;;
+esac
