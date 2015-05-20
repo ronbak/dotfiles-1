@@ -11,7 +11,7 @@ Run the `bootstrap.sh` script to back up your current dotfiles and move everythi
 - [Git](https://git-scm.com) (installed via package manager)
 - [tree](http://mama.indstate.edu/users/ice/tree) (installed via package manager)
 - [nvm](https://github.com/creationix/nvm), along with a stable version of Node.js (at time of writing, 0.10.x)
-- [rvm](https://rvm.io), along with a stable version of Ruby (at time of writing, 2.1.x)
+- [rvm](https://rvm.io), along with a stable version of Ruby (at time of writing, 2.2.2)
 - [Composer](http://getcomposer.org) (optional)
 - (OSX only) [Sublime Text](https://www.sublimetext.com) as the primary editor, with the `subl` [command-line helper](https://google.com/#q=subl+command+line) configured
 

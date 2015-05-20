@@ -22,4 +22,4 @@ PATH="$HOME/.composer/vendor/bin:$PATH"
 # rvm
 PATH="$HOME/.rvm/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-rvm use ruby-2.1.1
+rvm use 2.2.2
