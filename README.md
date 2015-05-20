@@ -23,11 +23,11 @@ To install Zsh, use [Homebrew](http://brew.sh) (OSX) or `apt-get` / `yum` (Debia
 
 Once completed, add the zsh binary to your `/etc/shells` file:
 
-`$ echo \`which zsh\` >> /etc/shells`
+``$ echo `which zsh` >> /etc/shells``
 
 Change the shell:
 
-`$ chsh -s \`which zsh\``
+``$ chsh -s `which zsh` ``
 
 When loading a new shell session, your `~/.zshrc` file will be loaded and will source the oh-my-zsh initialization script: initializing some things, loading plugins, and setting the Zsh theme.
 
