@@ -4,30 +4,27 @@ Note: This repo hasn't been tailored to be un-opinionated and customizable, so I
 
 ## Prerequisites
 
-- [Homebrew](http://brew.sh)
-- [Git](https://git-scm.com) (installed via Homebrew, ideally)
-- [tree](https://brewformulas.org/Tree) (installed via Homebrew)
+- [Git](https://git-scm.com) (installed via package manager)
+- [tree](http://mama.indstate.edu/users/ice/tree) (installed via package manager)
 - [nvm](https://github.com/creationix/nvm), along with a stable version of Node.js (0.10.x)
 - [rvm](https://rvm.io), along with a stable version of Ruby (2.1.1)
-- [Sublime Text](https://www.sublimetext.com) as the primary editor, with the `subl` [command-line helper](https://google.com/#q=subl+command+line) configured
+- (OSX only) [Sublime Text](https://www.sublimetext.com) as the primary editor, with the `subl` [command-line helper](https://google.com/#q=subl+command+line) configured
 
-### Zsh
+### zsh
 
-These dotfiles assume [Zsh](https://en.wikipedia.org/wiki/Z_shell) will be used as the default shell. **Oh My Zsh** is used for configuration and customization and is included as a submodule.
+These dotfiles assume [zsh](https://en.wikipedia.org/wiki/Z_shell) will be used as the default shell. **Oh My Zsh** is used for configuration and customization and is included as a submodule.
 
-To install Zsh, use Homebrew:
+To install Zsh, use [Homebrew](http://brew.sh) (OSX) or `apt-get` / `yum` (Debian / Red Hat).
 
-`$ brew install zsh`
+Once completed, add the zsh binary to your `/etc/shells` file:
 
-Then add the following line to your `/etc/shells` file:
-
-`/usr/local/bin/zsh`
+`$ echo \`which zsh\` >> /etc/shells`
 
 Change the shell:
 
-`$ chsh -s /usr/local/bin/zsh`
+`$ chsh -s \`which zsh\``
 
-When loading a new shell, your `~/.zshrc` file will be loaded and will source the oh-my-zsh setup script: initializing some things, loading plugins, and setting the Zsh theme.
+When loading a new shell session, your `~/.zshrc` file will be loaded and will source the oh-my-zsh initialization script: initializing some things, loading plugins, and setting the Zsh theme.
 
 ## Setup
 

@@ -1,5 +1,12 @@
-# Make Sublime Text the default editor.
-export EDITOR='subl';
+# Set the default editor.
+case $OSTYPE in
+linux*)
+  export EDITOR='nano';
+  ;;
+darwin*)
+  export EDITOR='subl';
+  ;;
+esac
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';

@@ -78,7 +78,7 @@ in_array() {
 #-----------------------------------------------------------------------------
 
 backupdir="$HOME/.dotfiles-backup/$(date "+%Y-%m-%d-%H%M.%S")"
-dependencies=(brew git nvm rvm tree)
+dependencies=(git nvm rvm tree)
 excluded=(. .. .DS_Store .git .gitignore .gitmodules bootstrap.sh CREDITS.txt LICENSE-MIT.txt README.md)
 
 
@@ -92,7 +92,7 @@ not_met=0
 for need in "${dependencies[@]}"; do
   dep $need
   met=$?
-  not_met=$(echo "$not_met + $met" | bc)
+  not_met=$(($not_met + $met))
 done
 
 if [ $not_met -gt 0 ]; then
