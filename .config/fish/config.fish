@@ -16,7 +16,7 @@ set -x HISTCONTROL ignoreboth
 . $fish_path/oh-my-fish.fish
 
 # nvm
-. $fish_custom/plugins/nvm-wrapper/nvm.fish
+. $fish_custom/plugins/nvm-fish-wrapper/nvm.fish
 
 # os-specific configs
 set -l platform_file $fish_custom/platforms/(uname -s).fish
