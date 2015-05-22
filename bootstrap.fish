@@ -140,4 +140,4 @@ install
 popd > /dev/null
 notice "Done! Reloading shell..."
 echo
-exec $SHELL -l
+. ~/.config/fish/config.fish
