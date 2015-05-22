@@ -81,7 +81,7 @@ end
 #-----------------------------------------------------------------------------
 
 set backupdir $HOME/dotfiles-backup/(date "+%Y-%m-%d-%H%M.%S")
-set dependencies "git" "nvm" "rvm" "tree" "watNO"
+set dependencies "git" "nvm" "rvm" "tree"
 set excluded "." ".." ".DS_Store" ".git" ".gitignore" ".gitmodules" "bootstrap.fish" "CREDITS.txt" "LICENSE-MIT.txt" "README.md"
 
 
