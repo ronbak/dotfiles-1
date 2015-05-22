@@ -8,7 +8,7 @@ Also included is a global `.gitignore` and a `.gitconfig` (if forking, please ch
 
 Before using these dotfiles, you need to be using `fish` as your shell. You'll enjoy it, seriously!
 
-Install package 'fish' via [Homebrew](http://brew.sh) (OSX) or `apt-get` / `yum` (Debian / Red Hat).
+Install the **fish** package via [Homebrew](http://brew.sh) (OSX), `apt-get` / `yum` (Debian / Red Hat), or whatever you use; you know best.
 
 Once completed, ensure its path is added the `/etc/shells` file. Usually a package manager will do this for you, but it's good to double-check. (Get the path by typing `which fish` in the terminal).
 
@@ -20,9 +20,9 @@ Change the shell:
 
 [Oh My Fish](https://github.com/bpinto/oh-my-fish) is used to manage themes and plugins.
 
-After fish has installed, grab oh-my-fish as well:
+After **fish** has installed, grab **oh-my-fish** as well:
 
-`curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish`
+`$ curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish`
 
 ## Good things to have
 
@@ -40,7 +40,7 @@ These dotfiles make use of the following tools, so if you want everything to wor
 `$ fish bootstrap.fish`
 
 - Checks for dependencies
-- Backs up your any dotfiles to be replaced to a dated folder in `~/dotfiles-backup`
+- Backs up anything due to be replaced to a dated folder in `~/dotfiles-backup`
 - Copies these dotfiles to your home directory
 
 ## OSX Settings
