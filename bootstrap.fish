@@ -69,9 +69,6 @@ function install
   set -l files (ls -a)
   for file in $files
     if not contains $file $excluded
-      if [ -d "$HOME/$file" ]
-        rm -rf "$HOME/$file"
-      end
       cp -Rf "$file" "$HOME/$file"
       c_list $file
     end
