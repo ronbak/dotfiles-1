@@ -55,10 +55,9 @@ function backup
   set -l files (ls -a)
   for file in $files
     if not contains $file $excluded
-      if [ -f "$HOME/$file" ]
-        cp -Rf "$HOME/$file" "$backupdir/$file"
-      end
       if [ -d "$HOME/$file" ]
+        cp -Rf "$HOME/$file" "$backupdir"
+      else
         cp -Rf "$HOME/$file" "$backupdir/$file"
       end
     end
@@ -69,7 +68,11 @@ function install
   set -l files (ls -a)
   for file in $files
     if not contains $file $excluded
-      cp -Rf "$file" "$HOME/$file"
+      if [ -d "$HOME/$file" ]
+        cp -Rf "$file" "$HOME"
+      else
+        cp -Rf "$file" "$HOME/$file"
+      end
       c_list $file
     end
   end
