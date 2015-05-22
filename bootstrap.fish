@@ -58,6 +58,9 @@ function backup
       if [ -f "$HOME/$file" ]
         cp -Rf "$HOME/$file" "$backupdir/$file"
       end
+      if [ -d "$HOME/$file" ]
+        cp -Rf "$HOME/$file" "$backupdir/$file"
+      end
     end
   end
 end
