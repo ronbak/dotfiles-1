@@ -1,40 +1,52 @@
 # @jonscottclark's dotfiles
 
-Note: This repo hasn't been tailored to be un-opinionated and customizable, so I apologize if it takes some effort to customize it to your exact needs and preferences. At the very least, I hope you can find some inspiration here towards the development of your own dotfiles and configuration layout.
+These dotfiles help configure the [friendly interactive shell (fish)](https://github.com/fish-shell/fish-shell).
 
-## Setup
+Also included is a global `.gitignore` and a `.gitconfig` (if forking, please change to your own user name and e-mail).
 
-Run the `bootstrap.sh` script to back up your current dotfiles and move everything in this repo to your home directory. Any dotfiles that will be overwritten will be moved to a timestamped folder in `~/.dotfiles-backup`.
+## the friendly interactive shell (fish)
 
-## Prerequisites
+Before using these dotfiles, you need to be using `fish` as your shell. You'll enjoy it, seriously!
 
-- [Git](https://git-scm.com) (installed via package manager)
-- [tree](http://mama.indstate.edu/users/ice/tree) (installed via package manager)
-- [nvm](https://github.com/creationix/nvm), along with a stable version of Node.js (at time of writing, 0.10.x)
-- [rvm](https://rvm.io), along with a stable version of Ruby (at time of writing, 2.2.2)
-- [Composer](http://getcomposer.org) (optional)
-- (OSX only) [Sublime Text](https://www.sublimetext.com) as the primary editor, with the `subl` [command-line helper](https://google.com/#q=subl+command+line) configured
+Install package 'fish' via [Homebrew](http://brew.sh) (OSX) or `apt-get` / `yum` (Debian / Red Hat).
 
-### zsh
-
-These dotfiles assume [zsh](https://en.wikipedia.org/wiki/Z_shell) will be used as the default shell. **Oh My Zsh** is used for configuration and customization and is included as a submodule.
-
-To install Zsh, use [Homebrew](http://brew.sh) (OSX) or `apt-get` / `yum` (Debian / Red Hat).
-
-Once completed, add the zsh binary to your `/etc/shells` file:
-
-``$ echo `which zsh` >> /etc/shells``
+Once completed, ensure its path is added the `/etc/shells` file. Usually a package manager will do this for you, but it's good to double-check. (Get the path by typing `which fish` in the terminal).
 
 Change the shell:
 
-``$ chsh -s `which zsh` ``
+``$ chsh -s `which fish` ``
 
-When loading a new shell session, your `~/.zshrc` file will be loaded and will source the oh-my-zsh initialization script: initializing some things, loading plugins, and setting the Zsh theme.
+### oh-my-fish
 
-## OSX Apps and Settings
+[Oh My Fish](https://github.com/bpinto/oh-my-fish) is used to manage themes and plugins.
 
-Instead of including any and all kinds of resources that aid in the setup of a new Mac environment, I created another repository for that purpose called [setupfiles](https://github.com/jonscottclark/setupfiles).
+After fish has installed, grab oh-my-fish as well:
+
+`curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish`
+
+## Good things to have
+
+These dotfiles make use of the following tools, so if you want everything to work out of the box, you ought to have these:
+
+- [git-flow](https://github.com/nvie/gitflow)
+- [nvm](https://github.com/creationix/nvm)
+- [rvm](https://rvm.io)
+- [Sublime Text](https://www.sublimetext.com) as the primary editor (OSX only)
+- [tree](http://mama.indstate.edu/users/ice/tree)
+- [z](https://github.com/rupa/z)
+
+## Ok, let's go!
+
+`$ fish bootstrap.fish`
+
+- Checks for dependencies
+- Backs up your any dotfiles to be replaced to a dated folder in `~/dotfiles-backup`
+- Copies these dotfiles to your home directory
+
+## OSX Settings
+
+Instead of including any and all kinds of resources that aid in the setup of a new Mac environment, I created another repository for that purpose called [setupfiles](https://github.com/jonscottclark/setupfiles). There, you'll find settings for Sublime Text, iTerm, and OSX itself.
 
 ## Acknowledgments
 
-I couldn't have done this without the help of others, see [CREDITS.txt](https://github.com/jonscottclark/dotfiles/blob/master/CREDITS.txt).
+I greatly relied on the existing work of other developers, please see [CREDITS.txt](https://github.com/jonscottclark/dotfiles/blob/master/CREDITS.txt).
