@@ -29,7 +29,7 @@ After **fish** has installed, grab **oh-my-fish** as well:
 These dotfiles make use of the following tools, so if you want everything to work out of the box, you ought to have these:
 
 - [git-flow](https://github.com/nvie/gitflow)
-- [nvm](https://github.com/creationix/nvm)
+- [nvm](https://github.com/creationix/nvm) (install a version of Node.js/io.js and then set it as the default version to use, e.g. `nvm alias default 0.10`)
 - [rvm](https://rvm.io)
 - [Sublime Text](https://www.sublimetext.com) as the primary editor (OSX only)
 - [tree](http://mama.indstate.edu/users/ice/tree)
