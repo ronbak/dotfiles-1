@@ -30,7 +30,6 @@ These dotfiles make use of the following tools, so if you want everything to wor
 
 - [git-flow](https://github.com/nvie/gitflow)
 - [nvm](https://github.com/creationix/nvm) (install a version of Node.js/io.js and then set it as the default version to use, e.g. `nvm alias default 0.10`)
-- [rvm](https://rvm.io)
 - [Sublime Text](https://www.sublimetext.com) as the primary editor (OSX only)
 - [tree](http://mama.indstate.edu/users/ice/tree)
 - [z](https://github.com/rupa/z)
