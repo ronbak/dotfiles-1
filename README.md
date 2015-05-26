@@ -32,7 +32,7 @@ These dotfiles make use of the following tools, so if you want everything to wor
 - [nvm](https://github.com/creationix/nvm) (install a version of Node.js/io.js and then set it as the default version to use, e.g. `nvm alias default 0.10`)
 - [Sublime Text](https://www.sublimetext.com) as the primary editor (OSX only)
 - [tree](http://mama.indstate.edu/users/ice/tree)
-- [z](https://github.com/rupa/z)
+- [z](https://github.com/rupa/z) (installed (or symlinked) to `/usr/local/etc/profile.d/z.sh`)
 
 ## Ok, let's go!
 
