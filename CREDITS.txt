@@ -1,5 +1,3 @@
-Thanks to...
-
 @gf3 (Gianni Chiappetta) for his fish shell config and for being generally awesome - https://github.com/gf3/dotfiles
 
 @mathiasbynens for lots. - https://github.com/mathiasbynens/dotfiles
