@@ -1,1 +1,2 @@
-set fish_plugins $fish_plugins brew subl
+Plugin "brew"
+Plugin "sublime"

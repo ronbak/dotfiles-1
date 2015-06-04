@@ -1,9 +1,7 @@
 # fish settings
-set fish_greeting
+set --erase fish_greeting
 set fish_path $HOME/.oh-my-fish
-set fish_plugins theme gi git-flow rvm z
 set fish_custom $HOME/.config/fish
-set fish_theme clearance
 
 # exports
 set -x LC_ALL en_US.UTF-8
@@ -14,6 +12,16 @@ set -x HISTCONTROL ignoreboth
 
 # load oh-my-fish
 . $fish_path/oh-my-fish.fish
+
+# theme
+Theme "clearance"
+
+# plugins
+Plugin "theme"
+Plugin "gi"
+Plugin "git-flow"
+Plugin "rvm"
+Plugin "z"
 
 # nvm
 . $fish_custom/plugins/nvm-fish-wrapper/nvm.fish
