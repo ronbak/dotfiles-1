@@ -42,7 +42,7 @@ These dotfiles make use of the following tools, so if you want everything to wor
 
 ### Ok, let's go!
 
-`$ fish bootstrap.fish`
+`$ . bootstrap.fish`
 
 - Checks for dependencies
 - Backs up anything due to be replaced to a dated folder in `~/dotfiles-backup`
