@@ -92,7 +92,7 @@ set excluded "." ".." ".DS_Store" ".git" ".gitignore" ".gitmodules" "bootstrap.f
 # Dependencies
 #-----------------------------------------------------------------------------
 
-notice "Checking dependencies"
+notice "Checking dependencies..."
 
 set not_met 0
 
@@ -115,25 +115,25 @@ if [ -d $HOME/dotfiles ]
   pushd $HOME/dotfiles > /dev/null
 
   # Update Repo
-  notice "Updating this repository + submodule(s)"
+  notice "Updating this repository + submodule(s)..."
   git pull origin master
   git submodule init
   git submodule update --remote --merge
 
 else
   # Clone Repo
-  notice "Downloading"
+  notice "Downloading..."
   git clone --recursive git://github.com/jonscottclark/dotfiles.git $HOME/dotfiles
 
   pushd $HOME/dotfiles > /dev/null
 end
 
 # Backup
-notice "Backup up old files ($backupdir)"
+notice "Backup up old files ($backupdir)..."
 backup
 
 # Install
-notice "Installing"
+notice "Installing dotfiles..."
 install
 
 #-----------------------------------------------------------------------------
@@ -141,6 +141,9 @@ install
 #-----------------------------------------------------------------------------
 
 popd > /dev/null
-notice "Done! Reloading shell..."
-echo
+notice "Installing Oh My Fish plugins and theme..."
 . ~/.config/fish/config.fish
+omf install
+notice "Done! Reloading shell..."
+fish
+
