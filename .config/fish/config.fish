@@ -2,6 +2,7 @@
 set --erase fish_greeting
 set fish_path $HOME/.oh-my-fish
 set fish_custom $HOME/.config/fish
+set -g fish_suppress_install_warning
 
 # exports
 set -x LC_ALL en_US.UTF-8

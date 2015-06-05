@@ -58,7 +58,9 @@ function backup
       if [ -d "$HOME/$file" ]
         cp -Rf "$HOME/$file" "$backupdir"
       else
-        cp -Rf "$HOME/$file" "$backupdir/$file"
+        if [ -f "$HOME/$file" ]
+          cp -Rf "$HOME/$file" "$backupdir/$file"
+        end
       end
     end
   end
@@ -115,8 +117,8 @@ if [ -d $HOME/dotfiles ]
   pushd $HOME/dotfiles > /dev/null
 
   # Update Repo
-  notice "Updating this repository + submodule(s)"
-  git pull origin master
+#  notice "Updating this repository + submodule(s)"
+#  git pull origin master
   git submodule init
   git submodule update --remote --merge
 
@@ -141,6 +143,7 @@ install
 #-----------------------------------------------------------------------------
 
 popd > /dev/null
-notice "Done! Reloading shell..."
-echo
+notice "Done! Reloading shell and installing plugins (ignore the scary red text)..."
 . ~/.config/fish/config.fish
+omf install
+fish
