@@ -57,7 +57,7 @@ function backup
     if not contains $file $excluded
       if [ -d "$HOME/$file" ]
         cp -Rf "$HOME/$file" "$backupdir"
-      else
+      else if [ -f "$HOME/$file" ]
         cp -Rf "$HOME/$file" "$backupdir/$file"
       end
     end
