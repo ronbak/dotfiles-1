@@ -28,15 +28,23 @@ After **fish** has installed, grab **oh-my-fish** as well:
 
 ---
 
-### Good things to have
+### Plugin and alias dependencies
 
-These dotfiles make use of the following tools, so if you want everything to work out of the box, you ought to have these:
+These dotfiles use Oh My Fish plugins, which integrate with the following tools...
 
-- [git-flow](https://github.com/nvie/gitflow)
-- [nvm](https://github.com/creationix/nvm) (install a version of Node.js/io.js and then set it as the default version to use, e.g. `nvm alias default 0.10`)
-- [Sublime Text](https://www.sublimetext.com) as the primary editor (OSX only)
+- [git-flow](https://github.com/nvie/gitflow) (completions)
+- [rvm](https://rvm.io) (wrapper)
+- [z](https://github.com/rupa/z) (installed (or symlinked) to `/usr/local/etc/profile.d/z.sh`) (wrapper)
+
+...plus `$PATH` helpers for OSX only:
+
+- [Homebrew](https://brew.sh)
+- [Sublime Text](https://www.sublimetext.com)
+
+The provided aliases assume you have these utilities already installed:
+
+- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 - [tree](http://mama.indstate.edu/users/ice/tree)
-- [z](https://github.com/rupa/z) (installed (or symlinked) to `/usr/local/etc/profile.d/z.sh`)
 
 ---
 
