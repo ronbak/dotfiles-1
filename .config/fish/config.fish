@@ -23,9 +23,6 @@ Plugin "git-flow"
 Plugin "rvm"
 Plugin "z"
 
-# nvm
-. $fish_custom/plugins/nvm-fish-wrapper/nvm.fish
-
 # os-specific configs
 set -l platform_file $fish_custom/platforms/(uname -s).fish
 if test -f $platform_file
@@ -48,7 +45,6 @@ function digga    ; command dig +nocmd $argv[1] any +multiline +noall +answer; e
 function g        ; git $argv ; end
 function ip       ; curl -s http://icanhazip.com/ ; end
 function mkcd     ; mkdir $argv ; and cd $argv ; end
-function n        ; npm $argv ; end
 function sudo!    ; echo "sudo $history[1]" ; eval sudo $history[1]; end
 
 # completions
