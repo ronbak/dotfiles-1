@@ -39,7 +39,6 @@ function ll    ; tree --dirsfirst -ChFupDaLg 1 $argv ; end
 
 # utilities
 function a        ; command ag --ignore=.git --ignore=log --ignore=tags --ignore=tmp --ignore=vendor --ignore=spec/vcr $argv ; end
-function c        ; pygmentize -O style=monokai -f console256 -g $argv ; end
 function d        ; du -h -d=1 $argv ; end
 function digga    ; command dig +nocmd $argv[1] any +multiline +noall +answer; end
 function g        ; git $argv ; end
