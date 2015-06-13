@@ -59,4 +59,3 @@ function make_completion --argument-names alias command
 end
 
 make_completion g 'git'
-make_completion n 'npm'
