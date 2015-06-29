@@ -1,4 +1,4 @@
-@gf3 (Gianni Chiappetta) for his fish shell config and for being generally awesome - https://github.com/gf3/dotfiles
+@gf3 (Gianni Chiappetta) for his fish shell config, tmux config, and for being generally awesome - https://github.com/gf3/dotfiles
 
 @mathiasbynens for lots. - https://github.com/mathiasbynens/dotfiles
 
