@@ -29,16 +29,8 @@ end
 function check_dep
   set -l missing 0
 
-  if [ $argv[1] = "nvm" ]
-    if [ -d "$HOME/.nvm" ]
-      set missing 0
-    else
-      set missing 1
-    end
-  else
-    type $argv[1] ^&1 > /dev/null
-    set missing $status
-  end
+  type $argv[1] ^&1 > /dev/null
+  set missing $status
 
   if [ $missing -eq 0 ]
     c_list $argv[1]
@@ -84,7 +76,7 @@ end
 #-----------------------------------------------------------------------------
 
 set backupdir $HOME/dotfiles-backup/(date "+%Y-%m-%d-%H%M.%S")
-set dependencies "git" "nvm" "tree"
+set dependencies "git" "tree"
 set excluded "." ".." ".DS_Store" ".git" ".gitignore" ".gitmodules" "bootstrap.fish" "CREDITS.txt" "LICENSE-MIT.txt" "README.md"
 
 
