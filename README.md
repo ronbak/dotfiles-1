@@ -12,7 +12,7 @@ Before using these dotfiles, you need to be using `fish` as your shell. You'll e
 
 Install the **fish** package via [Homebrew](http://brew.sh) (OSX), `apt-get` / `yum` (Debian / Red Hat), or whatever you use; you know best.
 
-Once completed, ensure its path is added the `/etc/shells` file. Usually a package manager will do this for you, but it's good to double-check. (Get the path by typing `which fish` in the terminal).
+Once completed, ensure its path is added the `/etc/shells` file. (Get the path by typing `which fish` in the terminal).
 
 Change the shell:
 
