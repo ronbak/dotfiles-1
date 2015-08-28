@@ -43,7 +43,7 @@ function d        ; du -h -d=1 $argv ; end
 function digga    ; command dig +nocmd $argv[1] any +multiline +noall +answer; end
 function g        ; git $argv ; end
 function ip       ; curl -s http://icanhazip.com/ ; end
-function localip  ; ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2; end
+function localip  ; ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d ' ' -f2; end
 function mkcd     ; mkdir $argv ; and cd $argv ; end
 function sudo!    ; echo "sudo $history[1]" ; eval sudo $history[1]; end
 
